@@ -42,7 +42,7 @@ SHAPE ::= ("Circle" "Circle"?) | ("Triangle" "Circle")
 </pre>
 
 ### explanation
-Every `SHAPE` must start with either `"Circle"` or `"Triangle"`. What should come after `"Circle"` is different from what should come after "Triangle", so we need to have two cases.
+Every `SHAPE` must start with either `"Circle"` or `"Triangle"`. What should come after `"Circle"` is different from what should come after `"Triangle"`, so we need to have two cases.
 
 ## 4
 ### original
