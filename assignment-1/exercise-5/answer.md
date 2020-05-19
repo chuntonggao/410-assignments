@@ -52,7 +52,7 @@ SHAPE ::= ("Circle" | "Triangle")* "Circle"
 
 ### factored
 <pre>
-SHAPE ::= SHAPE (("CIRCLE" | "TRIANGLE")* "CIRCLE")?
+SHAPE ::= （"CIRCLE" SHAPE*) | ("TRIANGLE" SHAPE+)
 </pre>
 
 ### explanation
