@@ -55,5 +55,6 @@ SHAPE ::= ("Circle" | "Triangle")* "Circle"
 SHAPE ::= （"CIRCLE" SHAPE*) | ("TRIANGLE" SHAPE+)
 </pre>
 
+
 ### explanation
-The original definition tells us that `SHAPE` must end with `"Circle"` but can have an arbitrary number of `"CIRCLE"`s and `"TRIANGLE"`s before the ending .
+`SHAPE` can start with either `"CIRCLE"` or `"TRIANGLE"`. In the former case, there can be an arbitrary number of `SHAPE`s following. In the second case, there must be at least 1 `SHAPE` following.
