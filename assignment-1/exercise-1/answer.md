@@ -3,9 +3,9 @@ public void parse() {
 	tokenizer.getAndCheckNext("Table:");
 
 	// Parse BoldRow
-  BOLDROW boldRow = new BOLDROW();
-  boldRow.parse();
-  rows.add(boldRow);
+	BOLDROW boldRow = new BOLDROW();
+	boldRow.parse();
+	rows.add(boldRow);
 
 	// Parse Rows
 	while (tokenizer.moreTokens() && 
