@@ -22,7 +22,7 @@ public class PROGRAM extends Node {
 
     public void parse(){
         // Parse Title
-        if (tokenizer.checkNext("Title:")) {
+        if (tokenizer.checkToken("Title:")) {
             tokenizer.getAndCheckNext("Title:");
             title = new TITLE();
             title.parse(); 
