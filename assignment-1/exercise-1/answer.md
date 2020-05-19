@@ -11,8 +11,8 @@ public void parse() {
 	while (tokenizer.moreTokens() && 
 	!tokenizer.checkToken("Table:")){
 		ROW row = new ROW();
-    row.parse();
-    rows.add(row);
+		row.parse();
+		rows.add(row);
   }
 }
 ```
