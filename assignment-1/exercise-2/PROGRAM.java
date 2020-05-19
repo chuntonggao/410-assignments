@@ -27,6 +27,7 @@ public class PROGRAM extends Node {
             title.parse(); 
         } else {
             title = new TITLE();
+            title.title = "";
         }
 
         // Parse Tables

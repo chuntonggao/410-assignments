@@ -1,1 +1,1 @@
-The modified TinyHTML grammar is ambiguous because it could be parsed into multiple different ASTs. For example, there is no way to distinguish between a `TITLE` and a `TABLE`.
+The modified TinyHTML grammar is ambiguous because it could be parsed into multiple different ASTs. For example, there is no way to distinguish between a `TITLE` and a `TABLE`. It is no longer as obvious how the parser can find out if the program has a title or not.
