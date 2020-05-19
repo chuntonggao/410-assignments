@@ -25,8 +25,6 @@ public class PROGRAM extends Node {
         if (tokenizer.checkToken("Title:")) {
             title = new TITLE();
             title.parse(); 
-        } else {
-            start = start + "<h1></h1>";
         }
 
         // Parse Tables
