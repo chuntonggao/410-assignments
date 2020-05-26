@@ -1,5 +1,7 @@
 package ast;
 
+import java.util.*;
+
 public class PRINT extends STATEMENT {
     private EXP printed;
 
@@ -11,8 +13,8 @@ public class PRINT extends STATEMENT {
     }
 
     @Override
-    public Integer evaluate() {
-        System.out.println("PRINTING: " + printed.evaluate());
+    public Integer evaluate(Map<String, Object> symbolTable) {
+        System.out.println("PRINTING: " + printed.evaluate(symbolTable));
         return null; // we only return a value for expressions (EXP); evaluation of statements is via side-effects
     }
 }

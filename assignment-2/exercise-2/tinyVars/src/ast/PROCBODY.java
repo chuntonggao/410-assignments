@@ -1,14 +1,13 @@
 package ast;
-import ui.Main;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PROCBODY extends EXP {
     private List<STATEMENT> statements = new ArrayList<>();
     private EXP returnVal;
     private List<NAME> args = new ArrayList<>();
     private List<Integer> argResults = new ArrayList<>();
+    private Map<String, Object> localSymbolTable = new HashMap<String, Object>();
 
     public void setArgResults(List<Integer> argResults) {
         this.argResults = argResults;
@@ -64,22 +63,22 @@ public class PROCBODY extends EXP {
     }
 
     @Override
-    public Integer evaluate() {
+    public Integer evaluate(Map<String, Object> symbolTable) {
         for (int i = 0; i < args.size(); i++) {
             NAME arg = args.get(i);
             Integer argResult = argResults.get(i);
             String argName = arg.toString();
-            Main.symbolTable.put(argName, argResult);
+            localSymbolTable.put(argName, argResult);
         }
         for (STATEMENT s : statements) {
-            s.evaluate();
+            s.evaluate(localSymbolTable);
         }
         if (returnVal == null) {
             // void return type
             return null;
         }
         // non void return type
-        Integer returnInteger = returnVal.evaluate();
+        Integer returnInteger = returnVal.evaluate(localSymbolTable);
         return returnInteger;
     }
 }

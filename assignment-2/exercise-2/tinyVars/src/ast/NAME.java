@@ -1,6 +1,6 @@
 package ast;
 
-import ui.Main;
+import java.util.*;
 
 public class NAME extends EXP {
     private String name;
@@ -11,8 +11,8 @@ public class NAME extends EXP {
     }
 
     @Override
-    public Integer evaluate() {
-        return (Integer) Main.symbolTable.get(name);
+    public Integer evaluate(Map<String, Object> symbolTable) {
+        return (Integer) symbolTable.get(name);
     }
 
     @Override

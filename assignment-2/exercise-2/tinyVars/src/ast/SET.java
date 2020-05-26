@@ -1,6 +1,6 @@
 package ast;
 
-import ui.Main;
+import java.util.*;
 
 public class SET extends STATEMENT {
     private String name;
@@ -16,12 +16,12 @@ public class SET extends STATEMENT {
     }
 
     @Override
-    public Integer evaluate() {
+    public Integer evaluate(Map<String, Object> symbolTable) {
         System.out.println("Evaluating " + exp);
-        Integer result = exp.evaluate();
+        Integer result = exp.evaluate(symbolTable);
         System.out.println("Setting " + name + " to " + result);
 
-        Main.symbolTable.put(name, result);
+        symbolTable.put(name, result);
         return null; // we only return a value for expressions (EXP); evaluation of statements is via side-effects
     }
 }

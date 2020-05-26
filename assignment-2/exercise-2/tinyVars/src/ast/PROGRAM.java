@@ -2,8 +2,7 @@ package ast;
 
 import libs.Node;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PROGRAM extends Node {
     private List<Node> nodes = new ArrayList<>();
@@ -38,9 +37,9 @@ public class PROGRAM extends Node {
     }
 
     @Override
-    public Integer evaluate() {
+    public Integer evaluate(Map<String, Object> symbolTable) {
         for (Node node : nodes) {
-            node.evaluate();
+            node.evaluate(symbolTable);
         }
         return null; // we only return a value for expressions (EXP); evaluation of
                      // programs/statements is via side-effects

@@ -1,7 +1,6 @@
 package ui;
 
 import ast.PROGRAM;
-import ast.EXP;
 import libs.Tokenizer;
 
 import java.util.Arrays;
@@ -15,10 +14,10 @@ public class Main {
     public static void main(String[] args) {
 
         List<String> literals = Arrays.asList("def", "set", "print", "new", ",", "{", "}", "call", "return", "(", ")");
-        Tokenizer.makeTokenizer("input4.tvar",literals);
+        Tokenizer.makeTokenizer("input5.tvar",literals);
         PROGRAM p = new PROGRAM();
         p.parse();
-        p.evaluate();
+        p.evaluate(Main.symbolTable);
         System.out.println("completed successfully");
         System.out.println(symbolTable);
     }

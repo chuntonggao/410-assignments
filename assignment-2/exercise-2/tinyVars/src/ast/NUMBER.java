@@ -1,5 +1,7 @@
 package ast;
 
+import java.util.*;
+
 public class NUMBER extends EXP {
     private int value;
 
@@ -16,7 +18,7 @@ public class NUMBER extends EXP {
     }
 
     @Override
-    public Integer evaluate() {
+    public Integer evaluate(Map<String, Object> symbolTable) {
         return value; // Java auto-boxes this int as an Integer object
     }
 

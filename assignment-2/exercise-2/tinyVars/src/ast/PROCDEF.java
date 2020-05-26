@@ -1,7 +1,7 @@
 package ast;
 
 import libs.Node;
-import ui.Main;
+import java.util.*;
 
 public class PROCDEF extends Node {
     private String name;
@@ -19,9 +19,9 @@ public class PROCDEF extends Node {
     }
 
     @Override
-    public Integer evaluate() {
+    public Integer evaluate(Map<String, Object> symbolTable) {
         System.out.println("Define procedure " + this.name + " and put into symbol table");
-        Main.symbolTable.put(name, procBody);
+        symbolTable.put(name, procBody);
         return null;
     }
 }
