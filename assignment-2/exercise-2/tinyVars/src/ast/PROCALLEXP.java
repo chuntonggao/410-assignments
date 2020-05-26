@@ -9,6 +9,21 @@ public class PROCALLEXP extends EXP{
 	public void parse() {
 		tokenizer.getAndCheckNext("call");
 		name = tokenizer.getNext();
+		if (tokenizer.checkToken("\\(")) {
+			tokenizer.getAndCheckNext("\\(");
+			while (!tokenizer.checkToken("\\)")) {
+				EXP arg = EXP.makeExp(tokenizer);
+				arg.parse();
+				while (tokenizer.checkToken(",")) {
+					tokenizer.getAndCheckNext(",");
+					EXP otherArg = EXP.makeExp(tokenizer);
+
+					otherArg.parse();
+				}
+				break;
+			}
+			tokenizer.getAndCheckNext("\\)");
+		}
 	}
 
 	@Override

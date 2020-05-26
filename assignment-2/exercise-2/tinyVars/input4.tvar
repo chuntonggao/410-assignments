@@ -1,0 +1,15 @@
+def swap(x, y) {
+    set a, y
+    set b, x
+}
+
+new a
+set a, 1
+new b
+set b, 2
+call swap(a, b)
+print a
+print b
+call swap(b, a)
+print a
+print b

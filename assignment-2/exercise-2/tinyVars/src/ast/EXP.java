@@ -15,7 +15,7 @@ public abstract class EXP extends Node {
         else if (tokenizer.checkToken("[0-9]+")) {
             return new NUMBER();
         }
-        else if (tokenizer.checkToken("\\{")) {
+        else if (tokenizer.checkToken("\\{") || tokenizer.checkToken("\\(")) {
             return new PROCBODY();
         }
         else {
