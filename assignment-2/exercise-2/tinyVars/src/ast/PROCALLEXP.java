@@ -1,9 +1,13 @@
 package ast;
 
 import ui.Main;
+import java.util.ArrayList;
+import java.util.List;
 
-public class PROCALLEXP extends EXP{
+public class PROCALLEXP extends EXP {
 	String name;
+	List<EXP> args = new ArrayList<>();
+	List<Integer> argResults = new ArrayList<>();
 
 	@Override
 	public void parse() {
@@ -14,11 +18,12 @@ public class PROCALLEXP extends EXP{
 			while (!tokenizer.checkToken("\\)")) {
 				EXP arg = EXP.makeExp(tokenizer);
 				arg.parse();
+				args.add(arg);
 				while (tokenizer.checkToken(",")) {
 					tokenizer.getAndCheckNext(",");
 					EXP otherArg = EXP.makeExp(tokenizer);
-
 					otherArg.parse();
+					args.add(otherArg);
 				}
 				break;
 			}
@@ -28,8 +33,12 @@ public class PROCALLEXP extends EXP{
 
 	@Override
 	public Integer evaluate() {
+		for (EXP arg : args) {
+			Integer argResult = arg.evaluate();
+			argResults.add(argResult);
+		}
 		PROCBODY proBody = (PROCBODY) Main.symbolTable.get(name);
+		proBody.setArgResults(argResults);
 		return proBody.evaluate();
 	}
-    
 }
