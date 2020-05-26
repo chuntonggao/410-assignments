@@ -33,21 +33,21 @@ public class Tokenizer {
         //0. Pick some RESERVEDWORD (string which never occurs in your input) : we'll use _
         //1. Read the whole program into a single string; kill the newlines and tabs
         String tokenizedProgram = program.replace("\n", "");
-        System.out.println(tokenizedProgram);
+        // System.out.println(tokenizedProgram);
         //2. Replace all constant literals with “RESERVEDWORD”<the literal>“RESERVEDWORD”
         for(String s : literals) {
             tokenizedProgram = tokenizedProgram.replace(s, "_" + s + "_");
-            System.out.println(tokenizedProgram);
+            // System.out.println(tokenizedProgram);
         }
         //3. Replace all “RESERVEDWORDRESERVEDWORD” with just “RESERVEDWORD”
         tokenizedProgram = tokenizedProgram.replace("__","_");
-        System.out.println(tokenizedProgram);
+        // System.out.println(tokenizedProgram);
         //4. Remove leading “_” character, then split on “_”
         if(tokenizedProgram.length() > 0 && tokenizedProgram.charAt(0) == '_') {
             tokenizedProgram = tokenizedProgram.substring(1); // without first character
         }
         List<String> rawTokens = Arrays.asList(tokenizedProgram.split("_"));
-        System.out.println(rawTokens);
+        // System.out.println(rawTokens);
         //5. Trim whitespace around tokens (unless you want it)
         for (String token : rawTokens) {
             String trimmedToken = token.trim();
@@ -55,7 +55,7 @@ public class Tokenizer {
                 tokens.add(trimmedToken);
             }
         }
-        System.out.println(tokens);
+        // System.out.println(tokens);
     }
 
 
@@ -106,7 +106,7 @@ public class Tokenizer {
 
     public boolean checkToken(String regexp){
         String s = checkNext();
-        System.out.println("comparing: |"+s+"|  to  |"+regexp+"|");
+        // System.out.println("comparing: |"+s+"|  to  |"+regexp+"|");
         return (s.matches(regexp));
     }
 
@@ -116,7 +116,7 @@ public class Tokenizer {
         if (!s.matches(regexp)) {
             throw new RuntimeException("Unexpected next token for Parsing! Expected something matching: " + regexp + " but got: " + s);
         }
-        System.out.println("matched: "+s+"  to  "+regexp);
+        // System.out.println("matched: "+s+"  to  "+regexp);
         return s;
     }
 

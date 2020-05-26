@@ -12,6 +12,9 @@ public abstract class EXP extends Node {
         else if (tokenizer.checkToken("[0-9]+")) {
             return new NUMBER();
         }
+        else if (tokenizer.checkToken("\\{")) {
+            return new PROCBODY();
+        }
         else {
             throw new RuntimeException("Unknown value: " + tokenizer.getNext());
         }

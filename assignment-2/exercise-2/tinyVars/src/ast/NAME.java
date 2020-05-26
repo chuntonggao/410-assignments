@@ -12,7 +12,7 @@ public class NAME extends EXP {
 
     @Override
     public Integer evaluate() {
-        return Main.symbolTable.get(name);
+        return (Integer) Main.symbolTable.get(name);
     }
 
     @Override

@@ -1,0 +1,17 @@
+def swap {
+    new temp
+    set temp, a
+    set a, b
+    set b, temp
+}
+
+new a
+set a, 1
+new b
+set b, 2
+call swap
+print a
+print b
+call swap 
+print a
+print b
