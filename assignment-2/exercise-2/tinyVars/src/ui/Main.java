@@ -14,8 +14,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<String> literals = Arrays.asList("def", "set", "print", "new", ",", "{", "}", "call");
-        Tokenizer.makeTokenizer("input2.tvar",literals);
+        List<String> literals = Arrays.asList("def", "set", "print", "new", ",", "{", "}", "call", "return");
+        Tokenizer.makeTokenizer("input3.tvar",literals);
         PROGRAM p = new PROGRAM();
         p.parse();
         p.evaluate();

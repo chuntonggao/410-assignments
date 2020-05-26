@@ -5,11 +5,12 @@ import java.util.List;
 
 public class PROCBODY extends EXP {
     private List<STATEMENT> statements = new ArrayList<>();
+    private EXP returnVal;
 
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("\\{");
-        while (!tokenizer.checkToken("\\}")) {
+        while (!tokenizer.checkToken("\\}") && !tokenizer.checkToken("return")) {
             STATEMENT s = null;
             if (tokenizer.checkToken("set")) {
                 s = new SET();
@@ -25,14 +26,25 @@ public class PROCBODY extends EXP {
             s.parse();
             statements.add(s);
         }
+        if (tokenizer.checkToken("return")) {
+            tokenizer.getAndCheckNext("return");
+            returnVal = EXP.makeExp(tokenizer);
+            returnVal.parse();
+        }
         tokenizer.getAndCheckNext("\\}");
     }
 
     @Override
     public Integer evaluate() {
-        for (STATEMENT s : statements){
+        for (STATEMENT s : statements) {
             s.evaluate();
         }
-        return null;
+        if (returnVal == null) {
+            // void return type
+            return null;
+        }
+        // non void return type
+        Integer returnInteger = returnVal.evaluate();
+        return returnInteger;
     }
 }
