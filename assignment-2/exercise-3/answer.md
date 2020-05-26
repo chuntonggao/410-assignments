@@ -17,6 +17,3 @@
 5. Procedures can be undefined by assigning a number to the procedure name.
 
 > True for our language (the token is still defined and represents a number, although it is not callable any more). It should be false for an ideal language. This behavior is very counter-intuitive because it does not exist in most programming languages, resulting in bad learnability.
-
-var func = () => {}
-func = 1
