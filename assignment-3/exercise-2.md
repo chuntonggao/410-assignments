@@ -10,7 +10,7 @@
 
 > A professor wants to find out if using a lie detector during online exams is more effective at catching cheaters than using an online proctoring tool. Since it is unclear if the lie detector works accurately, the professor guarantees that students who volunteer to use the lie detector during the midterm will not be penalized if they get caught cheating (no matter if they did cheat or if it was a false positive).
 
-- The students cannot make their decision to participate truly voluntarily since the professor controls their grades.
+- The students cannot make their decision to participate truly voluntarily since the professor has the power to decide their grades.
 - The professor's proposal may constitute academic misconduct because actual cheating may be tolerated during the midterm.
 - The students may be under emotional stress and perform poorly on the midterm due to the presence of the lie detector (and the possibility that the detector could have false positives).
 

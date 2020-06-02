@@ -4,7 +4,7 @@
 
 - Type: survey
 - Threats to validity
-  - Internal validity: The low productivity rating of the 3 developers who do not use an IDE may not be a direct result of not using an IDE. Their could be confounding variables. For example, maybe these developers come from companies who cannot not afford IDE subscriptions. Their low productivity could be negatively impacted by the companies' low budget but is not a direct result of not using an IDE.
+  - Internal validity: The low productivity rating of the 3 developers who do not use an IDE may not be a direct result of not using an IDE. There could be confounding variables. For example, maybe these developers come from companies who cannot not afford IDE subscriptions. Their low productivity could be negatively impacted by the companies' low budget but is not a direct result of not using an IDE.
   - Construct validity: The study is not measuring the correct concept. The study should measure how productive the developers **actually** are. But the study instead measures how productive they **feel**. Whether they feel productive does not necessarily indicate whether they actually work productively.
   - External validity: The low-productive group consists of only 3 developers, making the study's results un-generalizable.
 
@@ -23,5 +23,5 @@
 
 - Type: observational study
 - Threats to validity
-  - External validity: the study involves adult developers. Therefore, the study's results cannot be be generalized to kids.
+  - External validity: the study involves adult developers. Therefore, the study's results cannot be generalized to kids.
   - Construct validity: we could also argue that the study violates construct validity. The study is not measuring the right thing, i.e. how kids receive the DSL. Instead, the study measures how adult developers receive the DSL.
