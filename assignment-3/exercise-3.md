@@ -1,0 +1,9 @@
+1. By maximizing internal validity, researchers can exclude almost all confounding factors, so that they can observe in a highly controlled setting whether the new tool improves one particular aspect of programming work. By maximizing external validity, researchers can observe whether the new tool has any effect on different types of developers in an everyday setting, which makes the observation generalizable, but at the cost of being unable to unambiguously understand why the new tool affects the workflow.
+
+
+2. I think section 4 "maximizing internal or external validity" is the main section because this section explains why it is impossible to maximize both internal and external validity, thus highlighting the need of trade-offs. This explanation also relates to the paper's central question "should we focus on internal or external validity"? Since it is not possible to focus on both, it is very important for researchers to decide which one to focus on and design studies accordingly.
+
+
+3. If we maximize internal validity, then it is hard to generalize the result of a controlled experiment, which undermines external validity. If we maximize external validity, then it is unclear how the results emerged because many factors could have affected the results, which undermines internal validity.
+
+4. The most interesting result for me is the observation about human and non-human studies: non-human experiments can scale up to realistic situations at reasonable cost, but human experiments may not be scalable due to bias caused by human studies. This result surprises because in my opinion computer science is a fairly objective discipline (in contrast to social sciences and psychology, for example, where humans can influence research results heavily). But in reality, computer science research could also be influenced by human bias, as the paper suggests.
