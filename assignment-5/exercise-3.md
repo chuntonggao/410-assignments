@@ -88,3 +88,34 @@ void fun(int a, int b) {
     print(z);
 }
 ```
+
+## 3
+
+```java
+     void fun(int a, int b) {
+[1]      int x = a            // x -> {1}                           
+[2]      int y = b            // x -> {1}, y -> {2}
+[3]      int z = 0            // x -> {1}, y -> {2}, z -> {3}
+[4]                           // x -> {1}, y -> {2}, z -> {3}
+[5]      if (x == 0)          // x -> {1}, y -> {2}, z -> {3}
+[6]          y = x            // x -> {1}, y -> {1,6}, z -> {3}
+[7]      else                 // x -> {1}, y -> {2}, z -> {3}
+[8]          y = z            // x -> {1}, y -> {3,8}, z -> {3}
+[9]                           // x -> {1}, y -> {1,3,6,8}, z -> {3}
+[10]     if (y == 0)          // x -> {1}, y -> {1,3,6,8}, z -> {3}
+[11]         x = z            // x -> {3,11}, y -> {1,3,6,8}, z -> {3}
+[12]                          // x -> {1,3,6,8,11}, y -> {1,3,6,8}, z -> {3}
+[13]     if (x != y)          // x -> {1,3,6,8,11}, y -> {1,3,6,8}, z -> {3}
+[14]         z = 1            
+[15]                          // x -> {1,3,6,8,11}, y -> {1,3,6,8}, z -> {3}
+[16]     print(x)             // x -> {1,3,6,8,11}, y -> {1,3,6,8}, z -> {3}
+[17]     print(y)             // x -> {1,3,6,8,11}, y -> {1,3,6,8}, z -> {3}
+[18]     print(z)             // x -> {1,3,6,8,11}, y -> {1,3,6,8}, z -> {3}
+     }
+```
+
+Each line here is a subset of the corresponding line in Exercise 1.
+
+## 4
+
+My results in dynamic program slicing are subsets of my results in Exercise 1. This is because static program slicing produces over-approximation.
